@@ -5,7 +5,7 @@ function createConnection(sql,callback) {
 		host: 'localhost',
 		user: 'root',
 		password: '',
-		database: 'happybooke'
+		database: 'happybooker'
 	});
 	//执行连接
 	connection.connect();

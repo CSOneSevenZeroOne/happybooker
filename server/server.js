@@ -6,10 +6,10 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 app.use(bodyParser.json())
-// var services = require('./router/services.js');
-// app.use('/services', services);//服务
+var createdata = require('./insert/createdata.js');
+app.use('/createdata', createdata);//服务
 
 
 app.set('jsonp callback name', 'JSON_CALLBACK');
-app.listen(6789);
+app.listen(9000);
 console.log("开启服务器");

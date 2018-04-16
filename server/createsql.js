@@ -6,7 +6,7 @@ function createConnection() {
 		host: 'localhost',
 		user: 'root',
 		password: '',
-		database: 'xiaomi'
+		database: 'happybooker'
 	});
 	connection.connect();
 	return connection
