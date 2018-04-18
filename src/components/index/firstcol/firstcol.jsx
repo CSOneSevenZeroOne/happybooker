@@ -80,6 +80,7 @@ class Firstcol extends Component {
                                         <p className="autoplay_bottom">{(() => {
                                             return ele.title
                                         })()}</p>
+                                        <a href={ele.link} className="swiperlink"></a>
                                     </div>)
                                 })
                                 return htmlstr;

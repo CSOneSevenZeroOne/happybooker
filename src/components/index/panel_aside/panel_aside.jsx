@@ -14,8 +14,8 @@ class Aside extends Component {
         return (
             <div className="panel_aside">
                 <div className="big-event">
-                    <div><a href="https://www.hbooker.com/activity/zhengwen_forth" target="_blank"><img src="http://www.hbooker.com/resources/imagesactivity/zhengwen_forth.jpg" /></a></div>
-                    <div><a href="http://www.hbooker.com/index/fuli" target="_blank"><img src="https://avatar.kuangxiangit.com/novel/img_notice/20180109032303547.jpg" /></a></div>
+                    <div><a href="javascript:void(0)" target="_blank"><img src="http://www.hbooker.com/resources/imagesactivity/zhengwen_forth.jpg" /></a></div>
+                    <div><a href="javascript:void(0)" target="_blank"><img src="https://avatar.kuangxiangit.com/novel/img_notice/20180109032303547.jpg" /></a></div>
                 </div>
                 <div className="recomm-tit">
                     <h4>精选荣誉榜单</h4>
