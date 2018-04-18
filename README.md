@@ -3,8 +3,10 @@
 ### 欢乐书客
 
 * 文件夹 ：'./src'
+* 服务端: './server'
+* 数据库/名: happybooker.sql&happybooker
 
-    此项目由脚手架构建
+    此项目由React脚手架构建
 
     ```
     $ cnpm install -g create-react-app
