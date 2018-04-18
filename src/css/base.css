@@ -376,3 +376,124 @@ s {
 .nav .search-form button:hover {
   background-color: #2cafe5;
 }
+.navfixed {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  background: url('https://www.hbooker.com/resources/images/header-bg.jpg') no-repeat center bottom #000;
+  opacity: 1;
+}
+.navfixed .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: #000;
+  opacity: .75;
+}
+.navfixed .menu-inner {
+  height: 100%;
+  z-index: 9;
+  position: relative;
+}
+.panel_main {
+  float: left;
+  width: 950px;
+}
+.panel_aside {
+  float: right;
+  width: 250px;
+}
+.fixedright {
+  display: block;
+  position: fixed;
+  right: 12px;
+  bottom: 60px;
+  z-index: 100;
+  width: 95px;
+  height: 180px;
+  background: url('https://www.hbooker.com/resources/images/bg-app-download.png') no-repeat 0;
+}
+.go-top {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  background: url('https://www.hbooker.com/resources/images/go-top.png') #fff no-repeat center;
+  opacity: 0.85;
+}
+.go-top a {
+  display: block;
+  padding: 6px;
+  text-align: center;
+  line-height: 1.2;
+  text-indent: -9999em;
+  height: 28px;
+}
+.swiper-pagination1 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination2 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination3 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination4 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination5 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination6 {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s opacity;
+  -o-transition: .3s opacity;
+  transition: .3s opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}

@@ -1,23 +1,35 @@
-
 import React, { Component } from 'react';
+import $ from 'jquery';
 class Nav extends Component {
     constructor(props) {
         super(props);
+    }
+    componentDidMount() {
+        $(document).on("scroll",function(){
+            if($(document).scrollTop()>220){
+                $(".nav").addClass("navfixed")
+                $(".go-top").show();
+            }
+            if($(document).scrollTop()<220){
+                $(".nav").removeClass("navfixed")
+                $(".go-top").hide();
+            }
+        })
     }
     render() {
         return (
             <div className="nav">
                 <div className="main menu-inner">
                     <ul className="menu ly-fl clearfix">
-                        <li><a href="https://www.hbooker.com/" className="selected">首页</a></li>
-                        <li><a href="https://www.hbooker.com/rank-index">排行</a></li>
-                        <li><a href="https://www.hbooker.com/index-zhaiwen">宅文</a></li>
-                        <li><a href="https://www.hbooker.com/index-tongren">同人</a></li>
-                        <li><a href="https://www.hbooker.com/index-female">女生</a></li>
-                        <li><a href="https://www.hbooker.com/index-comic">漫画</a></li>
-                        <li><a href="https://www.hbooker.com/index-game">游戏</a></li>
-                        <li><a href="https://www.hbooker.com/book_list">书库</a></li>
-                        <li><a href="https://www.hbooker.com/bbs">社区</a></li>
+                        <li><a href="javascript:void(0)" className="selected">首页</a></li>
+                        <li><a href="javascript:void(0)">排行</a></li>
+                        <li><a href="javascript:void(0)">宅文</a></li>
+                        <li><a href="javascript:void(0)">同人</a></li>
+                        <li><a href="javascript:void(0)">女生</a></li>
+                        <li><a href="javascript:void(0)">漫画</a></li>
+                        <li><a href="javascript:void(0)">游戏</a></li>
+                        <li><a href="javascript:void(0)">书库</a></li>
+                        <li><a href="javascript:void(0)">社区</a></li>
                     </ul>
                     <div className="ly-fr">
                         <form action="" name="myform" id="" target="_blank" className="search-form">
@@ -26,7 +38,7 @@ class Nav extends Component {
                         </form>
                     </div>
                 </div>
-                <b></b>
+                <b className='bg'></b>
             </div>
         );
     }
