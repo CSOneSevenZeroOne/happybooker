@@ -88,31 +88,34 @@ readerStream.on('end', function() {
 
         
     // }
-    var li=$("tr");
-    // console.log(li)
-    for(var i=0; i<li.length;i++){
-        var top=$(li[i]).find(".code").text(); 
-        var classfiy=$(li[i]).find(".type").text();
-        var bookname=$(li[i]).find(".name").text();
-        var section=$(li[i]).find(".name").children("span").text();
-        var vip=$(li[i]).find(".name").children("i").text();
-        var link=$(li[i]).find(".name").children("a").attr("href");
-        var anthor=$(li[i]).find(".author").children("a").text();
-        var time=$(li[i]).find(".date").text();
-        var wordnum=$(li[i]).find(".num").text();
-        // console.log(link)
-        // console.log(imgsrc)
-        // console.log(num)
-        // console.log(anthor)
-        // console.log(top)
-        // console.log(title)
-        // console.log(title1)
-        //console.log(111);
-            createConnection(`insert into index_lately_update set top='${top}',classfiy='${classfiy}',bookname='${bookname}',section='${section}',vip='${vip}',link='${link}',anthor='${anthor}',time='${time}',wordnum='${wordnum}'`,function(res){
-                console.log(res);
-            })
+    // var li=$("tr");
+    // // console.log(li)
+    // for(var i=0; i<li.length;i++){
+    //     var top=$(li[i]).find(".code").text(); 
+    //     var classfiy=$(li[i]).find(".type").text();
+    //     var bookname=$(li[i]).find(".name").text();
+    //     var section=$(li[i]).find(".name").children("span").text();
+    //     var vip=$(li[i]).find(".name").children("i").text();
+    //     var link=$(li[i]).find(".name").children("a").attr("href");
+    //     var anthor=$(li[i]).find(".author").children("a").text();
+    //     var time=$(li[i]).find(".date").text();
+    //     var wordnum=$(li[i]).find(".num").text();
+    //     // console.log(link)
+    //     // console.log(imgsrc)
+    //     // console.log(num)
+    //     // console.log(anthor)
+    //     // console.log(top)
+    //     // console.log(title)
+    //     // console.log(title1)
+    //     //console.log(111);
+    //         createConnection(`insert into index_lately_update set top='${top}',classfiy='${classfiy}',bookname='${bookname}',section='${section}',vip='${vip}',link='${link}',anthor='${anthor}',time='${time}',wordnum='${wordnum}'`,function(res){
+    //             console.log(res);
+    //         })
 
         
-    }
+    // }
+
+    var str='"\'" asdsadsa "\'"'
+    console.log(str.replace(/'+/g,'').replace(/"+/g,""))
 
 });

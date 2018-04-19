@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import { HashRouter, Route, Link } from "react-router-dom";
 class Nav extends Component {
     constructor(props) {
         super(props);
@@ -21,9 +22,9 @@ class Nav extends Component {
             <div className="nav">
                 <div className="main menu-inner">
                     <ul className="menu ly-fl clearfix">
-                        <li><a href="javascript:void(0)" className="selected">首页</a></li>
-                        <li><a href="javascript:void(0)">排行</a></li>
-                        <li><a href="javascript:void(0)">宅文</a></li>
+                        <li className="selected"><Link to="/index">首页</Link></li>
+                        <li><a href="javascript:void(0)">排行</a></li>/brother
+                        <li><Link to="/book">宅文</Link></li>
                         <li><a href="javascript:void(0)">同人</a></li>
                         <li><a href="javascript:void(0)">女生</a></li>
                         <li><a href="javascript:void(0)">漫画</a></li>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter, Route, Link } from "react-router-dom";
 import $ from 'jquery';
 import './toplist.css';
 class Zbqt extends Component {
@@ -31,37 +32,39 @@ class Zbqt extends Component {
                     <ul>
                         {(() => {
                             var htmlarr=this.state.list.map(function (ele, index) {
+                                var link = ele.link.split("book/")[1];
                                 if (ele.top == 1) {
                                     return (
                                         <li className="top1" key={index}>
-                                            <a href={ele.link} target="_blank">
+                                            <Link to={`/book?bookid=${link}`}>
                                                 <img className="img" src={ele.imgsrc} />
                                                 <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span>
                                                 <i className="icon-top icon-top1">{ele.top}</i><br />
                                                 <p>{ele.title}</p>
                                                 <p className="author">{ele.anthor}</p>
-                                            </a>
+                                                </Link>
                                         </li>
                                     )
                                 } else if (ele.top == 2) {
                                     return (
                                         <li className="top2" key={index}>
-                                            <a href={ele.link}>
-                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top2">{ele.top}</i>{ele.title}</a>
+                                            <Link to={`/book?bookid=${link}`}>
+                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top2">{ele.top}</i>{ele.title}</Link>
                                         </li>
                                     )
                                 } else if (ele.top == 3) {
                                     return (
                                         <li className="top3" key={index}>
-                                            <a href={ele.link}>
-                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top3">{ele.top}</i>{ele.title}</a>
+                                            <Link to={`/book?bookid=${link}`}>
+                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top3">{ele.top}</i>{ele.title}</Link>
                                         </li>
                                     )
                                 } else {
                                     return (
                                         <li key={index}>
-                                            <a href={ele.link} target="_blank">
-                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top">{ele.top}</i>{ele.title}</a>
+                                            <Link to={`/book?bookid=${link}`}>
+                                                <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top">{ele.top}</i>{ele.title}
+                                                </Link>
                                         </li>
                                     )
                                 }

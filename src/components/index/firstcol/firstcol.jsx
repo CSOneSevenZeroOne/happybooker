@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter, Route, Link } from "react-router-dom";
 import $ from 'jquery';
 import '../../../css/swiper.min.css';
 import Swiper from 'swiper';
@@ -37,10 +38,10 @@ class Firstcol extends Component {
             });
         });
         setTimeout(() => {
-            var swpier1=new Swiper('.swiper-container', {
+            var swpier1 = new Swiper('.swiper-container', {
                 spaceBetween: 30,
                 centeredSlides: true,
-                direction : 'horizontal',
+                direction: 'horizontal',
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
@@ -56,12 +57,12 @@ class Firstcol extends Component {
             });
         }, 500);
     }
-    leaveMouse(index){
+    leaveMouse(index) {
         $(".colr_list").eq(index).find(".info").stop();
         $(".colr_list").eq(index).find(".info").fadeOut()
         $(".colr_list").eq(index).find(".mask").fadeOut()
     }
-    enterMouse(index){
+    enterMouse(index) {
         $(".colr_list").eq(index).find(".info").stop();
         $(".colr_list").eq(index).find(".info").fadeIn()
         $(".colr_list").eq(index).find(".mask").fadeIn()
@@ -74,13 +75,14 @@ class Firstcol extends Component {
                         <div className="swiper-wrapper item">
                             {(() => {
                                 var htmlstr = this.state.banner.map(function (ele, index) {
+                                    var link = ele.link.split("book/")[1];
                                     return (<div className="swiper-slide items" style={{
                                         backgroundImage: 'url(' + ele.imgsrc + ')'
                                     }} key={index}>
                                         <p className="autoplay_bottom">{(() => {
                                             return ele.title
                                         })()}</p>
-                                        <a href={ele.link} className="swiperlink"></a>
+                                        <Link to={`/book?bookid=${link}`} className="swiperlink"></Link>
                                     </div>)
                                 })
                                 return htmlstr;
@@ -94,15 +96,16 @@ class Firstcol extends Component {
                 <div className="col_right clearfix">
                     <ul className="clearfix">
                         {(() => {
-                           var htmlarr= this.state.banner_right.map(function (ele, index) {
+                            var htmlarr = this.state.banner_right.map(function (ele, index) {
+                                var link = ele.link.split("book/")[1];
                                 return (
                                     <li className="colr_item colr_list" key={index}>
-                                        <a href={ele.link} target="_blank" onMouseEnter={this.enterMouse.bind(this,index)} onMouseLeave={this.leaveMouse.bind(this,index)}>
+                                        <Link to={`/book?bookid=${link}`} className="swiperlink" onMouseEnter={this.enterMouse.bind(this, index)} onMouseLeave={this.leaveMouse.bind(this, index)}>
                                             <img className="lazyload" src={ele.imgsrc} />
                                             <div className="mask"></div>
-                                            <div className="info" dangerouslySetInnerHTML={{__html: ele.html}}>
+                                            <div className="info" dangerouslySetInnerHTML={{ __html: ele.html }}>
                                             </div>
-                                        </a>
+                                            </Link> 
                                     </li>
                                 )
                             }.bind(this))

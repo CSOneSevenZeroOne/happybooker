@@ -49,6 +49,15 @@
 .aside_top ul li.top1 a .icon-top1 {
   margin-left: 6px;
 }
+.aside_top ul li.top1 span {
+  color: #ed5565 !important;
+}
+.aside_top ul li.top2 span {
+  color: #f28893 !important;
+}
+.aside_top ul li.top3 span {
+  color: #f8bbc1 !important;
+}
 .aside_top ul li {
   position: relative;
   overflow: hidden;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter, Route, Link } from "react-router-dom";
 import './classfiy_zw.css';
 import $ from 'jquery';
 import '../../../css/swiper.min.css';
@@ -50,8 +51,9 @@ class Trtj extends Component {
                     <ul>
                         {(()=>{
                            var htmlarr= this.state.list.map(function(ele,index){
+                            var link = ele.link.split("book/")[1];
                                 return (<li key={index}>
-                                    <a className="img" href={ele.link} target="_blank">
+                                    <a className="img" href={ele.link}>
                                         <img className="lazyload" src={ele.imgsrc}  />
                                         <div className="mask"></div>
                                         <div className="info">
@@ -66,8 +68,8 @@ class Trtj extends Component {
                                             <div className="num">{ele.starnum}<i></i></div>
                                         </div>
                                     </a>
-                                    <div className="title"><a href={ele.link} target="_blank" dangerouslySetInnerHTML={{__html: ele.bookname}}></a></div>
-                                    <div className="info" target="_blank" dangerouslySetInnerHTML={{__html: ele.html}}></div>
+                                    <div className="title"><Link to={`/book?bookid=${link}`} dangerouslySetInnerHTML={{__html: ele.bookname}}></Link></div>
+                                    <div className="info" dangerouslySetInnerHTML={{__html: ele.html}}></div>
                                 </li>)
                             })
                             return htmlarr;
