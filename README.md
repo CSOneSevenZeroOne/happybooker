@@ -1,9 +1,9 @@
-## 官网 [欢乐书客](https://www.hbooker.com/)
+## 欢乐书客 
 ---
-### 欢乐书客
+### 官网 : [欢乐书客](https://www.hbooker.com/)
 
-* 文件夹 ：'./src'
-* 服务端: './server'
+* 文件夹 : './src'
+* 服务端 : './server'
 * 数据库/名: happybooker.sql&happybooker
 
     此项目由React脚手架构建
@@ -13,7 +13,7 @@
     $ create-react-app happybooker
     ```
 
-输入 `npm start` 命令运行 `react-scripts start`  自动打开 http://localhost:3000 主页面
+输入 `npm start` 命令运行 `react-scripts start`  自动打开 http://localhost:3000 主页面, `node server` 启动服务端占用9000端口;
 
 - [Public_Path](https://github.com/CSOneSevenZeroOne/happybooker/tree/master/public)
 
