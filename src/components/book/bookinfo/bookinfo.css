@@ -136,3 +136,64 @@
     border-radius: 14px;
     margin-left: 2px;
 }
+.book-detail .book-property span {
+    width: 33%;
+}
+.book-detail .book-property span {
+    float: left;
+    width: 25%;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 14px;
+}
+.book-detail .book-intro-cnt {
+    height: 265px;
+}
+.book-detail .book-author-info {
+    font-size: 14px;
+    line-height: 26px;
+}
+.book-detail .book-author-info ul {
+    height: 236px;
+    overflow: hidden;
+}
+.book-detail .book-author-info li {
+    float: left;
+    width: 33.33%;
+    margin: 18px 0 9px;
+}
+.book-detail .book-author-info li {
+    width: 50%;
+}
+.book-detail .book-author-info li .img {
+    width: 63px;
+    height: 89px;
+    border: 1px solid #dcdcdc;
+}
+.book-detail .book-author-info li .img img {
+    width: 63px;
+    height: 89px;
+}
+.book-detail .book-author-info li .cnt {
+    width: 130px;
+    margin-left: 15px;
+}
+.book-detail .book-author-info li .cnt p {
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+}
+.book-detail .book-author-info li .cnt div {
+    margin-top: 12px;
+    color: #969696;
+    line-height: 26px;
+}
+.book-detail .book-author-info li .cnt div p {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}

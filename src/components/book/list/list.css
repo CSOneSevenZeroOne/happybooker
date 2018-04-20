@@ -45,7 +45,7 @@
 }
 .book-chapter-list .less {
     overflow: hidden;
-    max-height: 180px;
+    max-height: 1000px;
 }
 .book-chapter-list li {
     float: left;

@@ -50,18 +50,34 @@ router.post('/getbookinfo', function (req, res, next) {
         res.send(results);
     });
 });
-// router.post('/getdata2', function (req, res, next) {
-//     res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
-//     res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
-//     createConnection(`select * from index_top`, function (results) {
-//         res.send(results);
-//     });
-// });
-// router.post('/getdata3', function (req, res, next) {
-//     res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
-//     res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
-//     createConnection(`select * from index_lately_update`, function (results) {
-//         res.send(results);
-//     });
-// });
+
+router.post('/getdata2', function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
+    res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
+    createConnection(`select * from index_top`, function (results) {
+        res.send(results);
+    });
+});
+router.post('/getdata1', function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
+    res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
+    createConnection(`select * from autoplay`, function (results) {
+        res.send(results);
+    });
+});
+router.post('/getdata3', function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
+    res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
+    createConnection(`select * from index_lately_update`, function (results) {
+        res.send(results);
+    });
+});
+router.post('/getdata4', function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");//允许跨域
+    res.setHeader("Content-Type", "text/plain;charset=UTF-8");//字符编码
+    createConnection(`select * from index_booklist`, function (results) {
+        res.send(results);
+    });
+});
+
 module.exports = router;

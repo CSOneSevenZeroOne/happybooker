@@ -68,7 +68,7 @@ class Trtj extends Component {
                            var htmlarr= this.state.list.map(function(ele,index){
                                 var link = ele.link.split("book/")[1];
                                 return (<li key={index}>
-                                    <a className="img" href={ele.link}>
+                                    <Link to={`/book?bookid=${link}`} className="img">
                                         <img className="lazyload" src={ele.imgsrc}  />
                                         <div className="mask"></div>
                                         <div className="info">
@@ -82,7 +82,7 @@ class Trtj extends Component {
                                             <div className="n">{ele.info}</div>
                                             <div className="num">{ele.starnum}<i></i></div>
                                         </div>
-                                    </a>
+                                        </Link>
                                     <div className="title"><Link to={`/book?bookid=${link}`} dangerouslySetInnerHTML={{__html: ele.bookname}}></Link></div>
                                     <div className="info" dangerouslySetInnerHTML={{__html: ele.html}}></div>
                                 </li>)

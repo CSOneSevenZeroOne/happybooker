@@ -7,17 +7,19 @@ import Bookinfo from './bookinfo/bookinfo.jsx';
 import Mainaside from '../index/panel_aside/panel_aside.jsx';
 import List from './list/list.jsx';
 import Footer from '../public/footer.jsx';
-import { connect } from 'react-redux'
-
+import { connect, Provider } from 'react-redux'
+import { createStore } from 'redux'
 class Book extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            bool: false
+        }
     }
     componentDidMount() {
-        console.log(window.location.href);
-        if(window.location.href.indexOf("?bookid=")>-1){
-            //this.props.changeBookStatus();
-            var str=window.location.href.split("?bookid=")[1];
+        if (window.location.href.indexOf("?bookid=") > -1) {
+            var self = this;
+            var str = window.location.href.split("?bookid=")[1];
             $.ajax({
                 url: "http://localhost:9000/getdata/getbookinfo",
                 type: "post",
@@ -26,24 +28,45 @@ class Book extends Component {
                 },
                 dataType: "JSON"
             }).then((res) => {
-                console.log(res);
+                var arr = JSON.parse(res[0].section_list);
+                var arr1 = []
+                for (var i = 0; i < 12; i++) {
+                    arr1.push(arr[i])
+                }
+                console.log(arr1)
+                self.props.changeBookStatus(res[0]);
+                self.props.lookAll(arr1);
+                self.setState({
+                    bool: true
+                })
             })
         }
     }
     render() {
         return (
             <div className="panel">
-                <div className="main clearfix">
+                <div className="loading" style={(() => {
+                    return { display: this.state.bool ? 'none' : 'block', width: "100%" }
+                })()}>
+                    <img src="http://img.zcool.cn/community/0195f55972f18ca8012193a342310a.gif" style={{
+                        width: "480px",
+                        margin: "0px auto",
+                        marginLeft: "480px"
+                    }} />
+                </div>
+                <div className="main clearfix" style={(() => {
+                    return { display: this.state.bool ? 'block' : 'none' }
+                })()}>
                     <Classfiy />
-                    <div className="panel_main" style={{"marginTop":"30px"}}>
+                    <div className="panel_main" style={{ "marginTop": "30px" }}>
                         <div className="clearfix">
-                        <Author />
-                        <Bookinfo />
+                            <Author />
+                            <Bookinfo />
                         </div>
                         <List />
                     </div>
-                    
-                    <div className="panel_aside" style={{"marginTop":"30px"}}>
+
+                    <div className="panel_aside" style={{ "marginTop": "30px" }}>
                         <Aside />
                         <Mainaside />
                     </div>
@@ -54,17 +77,23 @@ class Book extends Component {
     }
 }
 export default connect((state) => {
-    console.log(state)
-	return {
-		state
-	}
+    return {
+        state
+    }
 }, (dispatch) => {
-	return {
-		changeBookStatus(){
-			dispatch({
-				type:"noce",
-				bookstatus:true
-			})
-		}
-	}
+    return {
+        changeBookStatus(res) {
+            dispatch({
+                type: "nice",
+                bookstatus: true,
+                bookinfo: res
+            })
+        },
+        lookAll(res) {
+            dispatch({
+                type: "lookbook",
+                article: res
+            })
+        }
+    }
 })(Book);

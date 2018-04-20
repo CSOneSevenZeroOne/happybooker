@@ -6,10 +6,10 @@ let superagent = require('superagent'); //发起请求
 var createConnection = require("../createConnection.js")
 charset(superagent);
 request.post({
-    url: 'http://localhost:9000/getdata/getdata3',
+    url: 'http://localhost:9000/getdata/getdata4',
 }, function optionalCallback(err, httpResponse, body) {
     var arr = JSON.parse(body);
-    for (var i = 9; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         //var self=arr[i];
         console.log(arr[i].link)
         superagent
@@ -40,13 +40,12 @@ request.post({
                     var book_type=JSON.stringify(typeobj);
 
                     var book_readlink=$(".book-operating").children("li").eq(0).find("a").attr("href");
-                    var book_infoarr=[$(".act-tab-content").eq(0).html(),$(".act-tab-content").eq(1).html(),$(".act-tab-content").eq(2).html()];
+                    var book_info=$(".book-cnt").html();
                     //作品信息
-                    var book_info=JSON.stringify(book_infoarr);
-
                     var book_name=$(".book-title").find("h1").text();
                     var anthor=$(".book-title").find("a").text();
                     //console.log(book_readlink)
+                   
                     createConnection(`insert into book_info set book_id_curr='${book_id_curr}',book_img='${book_img}',section_list='${section_list}',book_type='${book_type}',book_info='${book_info}',book_readlink='${book_readlink}',book_name='${book_name}',anthor='${anthor}'`,function(results){
                         console.log(111)
                     })

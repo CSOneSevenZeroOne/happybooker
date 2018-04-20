@@ -23,6 +23,9 @@ class Zbqt extends Component {
             });
         })
     }
+    loadReset(){
+        window.location.reload()
+    }
     render() {
         return (
             <div className="aside_top">
@@ -31,12 +34,13 @@ class Zbqt extends Component {
                     <div className="sub-tit"><i>TOP 10</i> 宅力无边</div>
                     <ul>
                         {(() => {
+                            var self=this;
                             var htmlarr = this.state.list.map(function (ele, index) {
                                 var link = ele.link.split("book/")[1];
                                 if (ele.top == 1) {
                                     return (
                                         <li className="top1" key={index}>
-                                            <Link to={`/book?bookid=${link}`}>
+                                            <Link to={`/book?bookid=${link}`} onClick={self.loadReset.bind(this)}>
                                                 <img className="img" src={ele.imgsrc} />
                                                 <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span>
                                                 <i className="icon-top icon-top1">{ele.top}</i><br />
@@ -48,21 +52,21 @@ class Zbqt extends Component {
                                 } else if (ele.top == 2) {
                                     return (
                                         <li className="top2" key={index}>
-                                            <Link to={`/book?bookid=${link}`}>
+                                            <Link to={`/book?bookid=${link}`} onClick={self.loadReset.bind(this)}>
                                                 <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top2">{ele.top}</i>{ele.title} </Link>
                                         </li>
                                     )
                                 } else if (ele.top == 3) {
                                     return (
                                         <li className="top3" key={index}>
-                                            <Link to={`/book?bookid=${link}`}>
+                                            <Link to={`/book?bookid=${link}`} onClick={self.loadReset.bind(this)}>
                                                 <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top icon-top3">{ele.top}</i>{ele.title} </Link>
                                         </li>
                                     )
                                 } else {
                                     return (
                                         <li key={index}>
-                                            <Link to={`/book?bookid=${link}`}>
+                                            <Link to={`/book?bookid=${link}`} onClick={self.loadReset.bind(this)}>
                                                 <span className="num" dangerouslySetInnerHTML={{ __html: ele.num }}></span><i className="icon-top">{ele.top}</i>{ele.title}
                                             </Link>
                                         </li>

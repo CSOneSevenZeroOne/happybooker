@@ -12,13 +12,15 @@ import { HashRouter, Route, Link } from "react-router-dom";
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 let store = createStore((state = {
-	bookstatus:false
+    bookstatus:false,
+    bookinfo:{},
+    article:[]
 }, action) => {
 	switch(action.type) {
 		case 'nice':
-			return Object.assign({}, state, {bookstatus: action.bookstatus});
-		case 'DECREMENT':
-			return state
+			return Object.assign({}, state, {bookstatus: action.bookstatus,bookinfo:action.bookinfo,article:action.article});
+		case 'lookbook':
+			return Object.assign({}, state, {article:action.article});
 		default:
 			return state
 	}

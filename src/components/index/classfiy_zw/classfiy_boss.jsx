@@ -8,8 +8,8 @@ class Trtj extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list:[],
-            trtj:[]
+            list: [],
+            trtj: []
         }
     }
     componentDidMount() {
@@ -49,27 +49,27 @@ class Trtj extends Component {
                 </div>
                 <div className="mod-body clearfix">
                     <ul>
-                        {(()=>{
-                           var htmlarr= this.state.list.map(function(ele,index){
-                            var link = ele.link.split("book/")[1];
+                        {(() => {
+                            var htmlarr = this.state.list.map(function (ele, index) {
+                                var link = ele.link.split("book/")[1];
                                 return (<li key={index}>
-                                    <a className="img" href={ele.link}>
-                                        <img className="lazyload" src={ele.imgsrc}  />
+                                    <Link to={`/book?bookid=${link}`} className="img">
+                                        <img className="lazyload" src={ele.imgsrc} />
                                         <div className="mask"></div>
                                         <div className="info">
-                                            <div className="t"><img src={(()=>{
-                                                if(ele.headpic){
+                                            <div className="t"><img src={(() => {
+                                                if (ele.headpic) {
                                                     return ele.headpic;
-                                                }else{
+                                                } else {
                                                     return 'https://www.hbooker.com/resources/images/avatar-default-m.png'
                                                 }
                                             })()} />{ele.title}</div>
                                             <div className="n">{ele.info}</div>
                                             <div className="num">{ele.starnum}<i></i></div>
                                         </div>
-                                    </a>
-                                    <div className="title"><Link to={`/book?bookid=${link}`} dangerouslySetInnerHTML={{__html: ele.bookname}}></Link></div>
-                                    <div className="info" dangerouslySetInnerHTML={{__html: ele.html}}></div>
+                                    </Link>
+                                    <div className="title"><Link to={`/book?bookid=${link}`} dangerouslySetInnerHTML={{ __html: ele.bookname }}></Link></div>
+                                    <div className="info" dangerouslySetInnerHTML={{ __html: ele.html }}></div>
                                 </li>)
                             })
                             return htmlarr;
