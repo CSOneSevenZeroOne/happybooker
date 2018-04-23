@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import "./list.css";
+import { HashRouter, Route, Link } from "react-router-dom";
 import { connect } from 'react-redux';
 class Zbqt extends Component {
     constructor(props) {
@@ -37,7 +38,9 @@ class Zbqt extends Component {
                                 if (JSON.stringify(this.props.state.article)&&JSON.stringify(this.props.state.article)!="[]") {
                                     var htmlarr = this.props.state.article.map(function (ele, index) {
                                         return (
-                                            <li key={index}><a href={ele.chapter_link}><i className="line"></i>{ele.chapter}</a></li>
+                                            <li key={index}><Link to={(()=>{
+                                                return "/chapter?id="+ele.chapter_link.split("chapter/")[1];
+                                            })()}><i className="line"></i>{ele.chapter}</Link></li>
                                         )
                                     })
                                     return htmlarr;
@@ -61,7 +64,9 @@ class Zbqt extends Component {
                                     }
                                     var htmlarr = arr1.map(function (ele, index) {
                                         return (
-                                            <li key={index}><a href={ele.chapter_link}><i className="line"></i>{ele.chapter}</a></li>
+                                            <li key={index}><Link to={(()=>{
+                                                return "/chapter?id="+ele.chapter_link.split("chapter/")[1];
+                                             })()}><i className="line"></i>{ele.chapter}</Link></li>
                                         )
                                     })
                                     return htmlarr;

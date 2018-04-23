@@ -6,8 +6,8 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 app.use(bodyParser.json())
-// var createdata = require('./insert/createdata.js');
-// app.use('/createdata', createdata);//服务
+// var insert = require('./insert/chapter.js');
+// app.use('/insert', insert);//服务
 
 var getdata = require('./router/getdata.js');
 app.use('/getdata', getdata);//获取数据

@@ -34,6 +34,7 @@ ReactDOM.render(
                 <Banner></Banner>
                 <Route path="/index" component={Index} />
                 <Route path="/book" component={Book} />
+                <Route path="/chapter" component={Book} />
             </div>
         </Provider>
 	</HashRouter>, document.getElementById('root'));

@@ -20,8 +20,7 @@ class Zbqt extends Component {
         }).then((res) => {
             this.setState({
                 list: res
-            });
-        })
+        });
     }
     loadReset(){
         window.location.reload()
